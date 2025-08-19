@@ -1,18 +1,18 @@
-//argument and vector
+// unsigned int performing on bit level
+// bitwise operators
 
 #include <stdio.h>
-int main(int argc, char *argv[])
+int main (void)
 {
     
-    int numofarguments = argc;
-    char *argument1 = argv[0];
-    char *argument2 = argv[1];
+    unsigned int a = 60; //0011 1100
+    unsigned int b = 13; //0000 1101
+    int result = 0;
     
-    //displaying output
-    printf("number of arguments is %d \n", numofarguments);
-    printf("\nargument 1 is the program name : %s \n", argument1);
-    printf("\nargument 2 is the command line argument : %s \n", argument2);
+    // this '&', '|'and other bitwise operator works on bit level
+    result = a|b;
+    
+    printf("result is %d \n", result);
     
     return 0;
 }
-    
