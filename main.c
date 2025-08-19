@@ -1,20 +1,40 @@
-// example of enum datatype
+// example of both enum and switch case
 
 #include <stdio.h>
 int main(void)
 {
-    //defining datatypes
-    enum company { GOOGLE, FACEBOOK, XEROX, YAHOO, EBAY, MICROSOFT};
+    //defining variables
+    enum weekday{monday, tuesday, wednesday, thursday, friday, saturday, sunday};
+    enum weekday today = monday;
     
-    enum company xerox = XEROX;
-    enum company google = GOOGLE;
-    enum company ebay = EBAY;
-    
-    //displaying required output
-    printf("\nthe value of xerox is %d \n", xerox);
-    printf("\nthe value of google is %d \n", google);
-    printf("\nthe value of ebay is %d \n\n", ebay);
+    //applying switch cases
+    switch (today)
+    {
+        case sunday:
+            printf("today is sunday\n");
+            break;
+        case monday:
+            printf("today is monday\n");
+            break;
+        case tuesday:
+            printf("today is tuesday\n");
+            break;
+        case wednesday:
+            printf("today is wednesday\n");
+            break;
+        case thursday:
+            printf("today is thursday\n");
+            break;
+        case friday:
+            printf("today is friday\n");
+            break;
+        case saturday:
+            printf("today is saturday\n");
+            break;
+        default:
+            printf("whatever\n");
+            break;
+    }
     
     return 0;
-    
 }
