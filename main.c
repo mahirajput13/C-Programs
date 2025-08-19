@@ -1,23 +1,19 @@
-// making a program multiplying two numbers using a function
+// multiplying two numbers using return keyword in function
 
 #include <stdio.h>
 
-// making function to multiply two numbers
-void mul(int x, int y)
+// making a function to multiply two numbers using return keyword
+int mul(int a, int b)
 {
-    int result = x*y;
-    printf("the multiplication of two numbers is %d \n", result);
+    int result = a*b;
+    return result;
 }
 
-//main funmction
+//main function
 int main(void)
 {
-    //passing parameters and calling function
-    mul(10, 20);
-    mul(45, 1);
-    mul(3,8);
-    
+    int result = 0;
+    result = mul(10, 20);
+    printf("the multiplication of two numbers is %d \n", result);
     return 0;
- }
-
-
+}
