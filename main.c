@@ -1,17 +1,22 @@
-// print numbers from 1 to 5 using do while loop
-// example of counter controlled loop
+// calculate the sum of numbers from 1 to entered number by user
 
 #include <stdio.h>
 int main(void)
 {
+    int i, n, sum=0;
     
-    int num=1;
+    //taking input from the user
+    printf("\nenter any number : ");
+    scanf("%d", &n);
     
-    //applying condition using do while loop
-    do {
-        printf("%d\n", num);
-        num++;
-    } while (num<=5);
+    //applying condition for calculating sum upto entered number
+    for (i=1; i<=n; i++)
+    {
+        sum = sum + i;
+    }
+    
+    //displaying output
+    printf("\nsum upto %d is %d \n", n,sum);
     
     return 0;
 }
