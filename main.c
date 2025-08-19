@@ -1,56 +1,50 @@
-// example of three dimensional array
-// elements of array should be entered by the user
-// print the elements of the array and the sum of all the elements of the array
+//make a weather program that displays the total  rainfall for each year, average yearly rainfall, and the average rainfall for each month
 
 #include <stdio.h>
-int main(void)
+#define years 5
+#define months 12
+int main (void)
+
 {
     
-    int i, j, k, sum=0, ar[1][2][3];
+    //initializing data to the rain array
+    float rain[years][months] = {
+        { 4.3, 4.3, 4.3, 3.0, 2.0, 1.2, 0.2, 0.2, 0.4, 2.4, 3.5, 6.6},
+        { 8.5, 8.2, 1.2, 1.6, 2.4,  .0, 5.2, 0.9, 0.3, 0.9, 1.4, 7.3},
+        { 9.1, 8.5, 6.7, 4.3, 2.1,  .8, 0.2, 0.2, 1.1, 2.3, 6.1, 8.4},
+        { 7.2, 9.9, 8.4, 3.3, 1.2,  .8, 0.4, 0.0, 0.6, 1.7, 4.3, 6.2},
+        { 7.6, 5.6, 3.8, 2.8, 3.8, 0.2, 0.0, 0.0, 0.0, 1.3, 2.6, 5.2}
+    };
     
-    //asking user to enter the elements into the array
-    printf("\nenter the elements into the array : \n");
-    for (i=0; i<2; i++)
+    int year, month;
+    float total, subtot;
+    
+   // applying condition and printing data of rainfall for each year
+    printf("\nYEAR \t\t RAINFALL (inches)\n");
+    for (year=0,total=0; year<5; year++)
     {
-        for (j=0; j<3; j++)
+        for (month=0, subtot=0; month<12; month++)
         {
-            for (k=0; k<4; k++)
-            {
-                scanf("%d ", &ar[i][j][k]);
-            }
+            subtot=subtot+rain[year][month];
         }
+        printf("%d \t\t %f\n", 2010+year, subtot);
+        total = total + subtot;
     }
     
-    //printing the elements of the array
-    printf("\nthe elements of the array are : \n");
-    for (i=0; i<2; i++)
+    //calculating average yearly rainfall
+    printf("\nthe average yearly rainfall is %f \n", total/5);
+    
+    //calculating average rainfall for each month
+    printf("\nthe monthly averages are : \n");
+    printf("\njan\t\tfeb\t\tmarch\tapril\tmay\t\tjune\tjuly\taug\t\tsept\toct\t\tnov\t\tdec\n");
+    for (month=0,total=0; month<12; month++)
     {
-        for (j=0; j<3; j++)
+        for (year=0, subtot=0; year<5; year++)
         {
-            for (k=0; k<4; k++)
-            {
-                printf("%d", ar[i][j][k]);
-                printf("\t");
-            }
-            printf("\n");
+            subtot=subtot+rain[year][month];
         }
-        printf("\n");
+        printf("%4.1f\t", subtot/5);
     }
-    
-    //calculating sum of the elements of the array
-    for (i=0; i<2; i++)
-    {
-        for (j=0; j<3; j++)
-        {
-            for (k=0; k<4; k++)
-            {
-                sum=sum+ar[i][j][k];
-            }
-        }
-    }
-    
-    //showing output of the sum to the user
-    printf("\nthe sum of the elements of the array is %d ", sum);
-    
+    printf("\n");
     return 0;
 }
