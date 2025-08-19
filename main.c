@@ -1,9 +1,17 @@
-// displaying "hello world" as a output
-
+//enter any number provided by user
 #include <stdio.h>
-
 int main(void)
 {
-    printf("Hello World!\n");
+    int n;
+    
+    //taking input by the user
+    printf("enter any number to print : \n");
+    scanf("%d", &n);
+    
+    //displaying output
+    printf("number entered by you is %d \n", n);
+    
     return 0;
 }
+
+
