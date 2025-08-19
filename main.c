@@ -1,29 +1,20 @@
-// program to implement the sign function
-// determine number is positive or negative
+// example of enum datatype
 
 #include <stdio.h>
 int main(void)
 {
-    int num;
+    //defining datatypes
+    enum company { GOOGLE, FACEBOOK, XEROX, YAHOO, EBAY, MICROSOFT};
     
-    //taking input from the user
-    printf("enter any number : ");
-    scanf("%d", &num);
+    enum company xerox = XEROX;
+    enum company google = GOOGLE;
+    enum company ebay = EBAY;
     
-    //applying condition and displaying output
-    if(num>0)
-    {
-        printf("\nentered number is positive that is +%d\n", num);
-    }
-    else if (num==0)
-    {
-        printf("\nentered number is neither positive nor negative.\nentered number is %d\n", num);
-    
-    }
-    else
-    {
-        printf("entered number is negative.\nthe number is %d \n", num);
-    }
+    //displaying required output
+    printf("\nthe value of xerox is %d \n", xerox);
+    printf("\nthe value of google is %d \n", google);
+    printf("\nthe value of ebay is %d \n\n", ebay);
     
     return 0;
+    
 }
