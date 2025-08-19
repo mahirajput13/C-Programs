@@ -1,17 +1,23 @@
-// first simple example of function
+// making a program multiplying two numbers using a function
 
 #include <stdio.h>
 
-//making a void function
-void add(void)
+// making function to multiply two numbers
+void mul(int x, int y)
 {
+    int result = x*y;
+    printf("the multiplication of two numbers is %d \n", result);
 }
 
-//main function
+//main funmction
 int main(void)
 {
+    //passing parameters and calling function
+    mul(10, 20);
+    mul(45, 1);
+    mul(3,8);
     
-    add();    //calling a function
     return 0;
-}
+ }
+
 
