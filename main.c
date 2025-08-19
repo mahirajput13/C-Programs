@@ -1,38 +1,48 @@
-// example of both enum and switch case
+// calculator program using statement
 
 #include <stdio.h>
 int main(void)
 {
-    //defining variables
-    enum weekday{monday, tuesday, wednesday, thursday, friday, saturday, sunday};
-    enum weekday today = monday;
+    int a, b, add, sub, mul, div ;
+    char operator;
+    
+    //taking input from the user
+    printf("\nenter value 1 : ");
+    scanf("%d", &a);
+    printf("\nenter value 2 : ");
+    scanf("%d", &b);
+    
+    printf("\nselect any symbol\n\n'+' for addition\n'-' for subtraction\n'*' for multiplication\n'/' for division\n");
+    scanf(" %c",&operator);
     
     //applying switch cases
-    switch (today)
+    switch (operator)
     {
-        case sunday:
-            printf("today is sunday\n");
+        case '+':
+            add = a+b;
+            printf("\naddition of entered number is %d\n", add);
             break;
-        case monday:
-            printf("today is monday\n");
+        case '-':
+            sub = a-b;
+            printf("\nsubtraction of entered number is %d\n", sub);
             break;
-        case tuesday:
-            printf("today is tuesday\n");
+        case '*':
+            mul = a*b;
+            printf("\nmultiplication of entered number is %d\n", mul);
             break;
-        case wednesday:
-            printf("today is wednesday\n");
-            break;
-        case thursday:
-            printf("today is thursday\n");
-            break;
-        case friday:
-            printf("today is friday\n");
-            break;
-        case saturday:
-            printf("today is saturday\n");
+        case '/':
+            if(b!=0)
+            {
+                div = a/b;
+                printf("\ndivision is %d\n", div);
+            }
+            else
+            {
+                printf("error : division by zero/n");
+            }
             break;
         default:
-            printf("whatever\n");
+            printf("\ninvalid operator\n");
             break;
     }
     
