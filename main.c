@@ -1,34 +1,34 @@
-//checks whether the number is prime or not
-//number should be entered by the user
-
+//checking and printing prime number between 3 to 100
 #include <stdio.h>
-int main (void)
+int main(void)
 {
-    int num, i, sum = 0;
     
-    //entering number bby the user
-    printf("\nenter any number to check whether it is prime or not  : ");
-    scanf("%d", &num);
+    int i, num;
     
-    //applying condition to check whether it is prime or not
-    for (i=1; i<=num; i++)
+    printf("\nprime numbers between 3 to 100 are : \n");
+    
+    //applying condition to check the number is prime or not
+    for (num=3; num<=100; num++)
     {
-        if(num%i==0)
+        int sum=0;
+        
+        for (i=1; i<=num; i++)
         {
-            sum = sum + 1;
+            
+            if(num%i==0)
+            {
+                sum = sum + 1;
+            }
+            
         }
+       
+       if(sum==2)
+       {
+           printf("%d, ", num);
+       }
+        
     }
-    
-    //printing the output to the user after checking
-    if(sum==2)
-    {
-        printf("\nthe entered number is prime\n");
-    }
-    else
-    {
-        printf("\nthe entered number is not prime\n");
-    }
-    
     
     return 0;
 }
+
