@@ -1,56 +1,28 @@
-// this is a guessing game
-// i have chosen a number between 1 to 20
-
+//calculate the average of the elements of an array
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int main(void)
+int main (void)
 {
+    int grades[10], sum = 0, i, avg;
     
-    int guess, numofguesses ;
-    time_t t = 0;
-    
-    //initializing the random number generator
-    srand((unsigned) time (&t));
-    
-    //getting random number between 1 to 20 and store in an int variable
-    int randomnum = rand()%21;
-    
-    //telling the guessing game to the user
-    printf("\nthis is a guessing game.\n");
-    printf("\ni have chosen a number between 1 to 20, which you must guess.\n");
-    
-    //applying loop
-    for(numofguesses=5; numofguesses>0; --numofguesses)
+    //entering elements into the array (from the user)
+    printf("\nenter any 5 elements into the array\n");
+    for (i=0; i<5; i++)
     {
-        printf("\nyou have %d tr%s left.\n", numofguesses, numofguesses == 1? "y": "ies");
-        printf("\nenter a guess : ");
-        scanf("%d", &guess);
-        
-        if(guess == randomnum)
-        {
-            printf("\ncongratulations. you guessed it ..! ");
-            return 0;
-        }
-        
-        else if ( guess<0 || guess> 20)
-        {
-            printf("\ni said the number is between 1 to 20.");
-        }
-        
-        else if(randomnum > guess)
-        {
-            printf("\nsorry, %d is wrong. my number is greater than that.", guess);
-        }
-        
-        else if(randomnum < guess)
-        {
-            printf("\nsorry, %d is wrong. my number is less than that.", guess);
-        }
+        scanf("%d", &grades[i]);
     }
-        //if user fails to guess the number
-        printf("\nyou have had five tries and failed. the number was %d\n", randomnum);
-        
+    
+    //applying condition to get the sum of the elements of the array
+    for (i=0; i<5; i++)
+    {
+        sum = sum + grades[i];
+    }
+    
+    //finding average value
+    avg = sum/5;
+    
+    //printing output to the user
+    printf("the average value of the elements is %d \n", avg);
+    
     return 0;
+    
 }
