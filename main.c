@@ -1,24 +1,17 @@
-// convert number of minutes into days and years
-// minutes should be entered by the user
+// display the size of various datatypes
 
 #include <stdio.h>
 int main(void)
 {
-    float mins, days, normalyear, leapyear;
-    
-    //taking input from the user
-    printf("\nenter the number of minutes to convert them into days, normal years and leap years : ");
-    scanf("%f", &mins);
-    
-    //applying condition
-    days = (mins/(60.0*24.0));
-    normalyear = (mins/(60.0*24.0*365.0));
-    leapyear = (mins/(60.0*24.0*366.0));
-    
     //displaying output
-    printf("\nthe number of days in entered minutes are %f ", days);
-    printf("\nthe number of normal years in entered minuutes are %f ", normalyear);
-    printf("\nthe number of leap years in entered minutes are %f \n", leapyear);
+    printf("datatype char occupies %lu bytes\n", sizeof(char));
+    printf("datatype short occupies %lu bytes\n", sizeof(short));
+    printf("datatype int occupies %lu bytes\n", sizeof(int));
+    printf("datatype float occupies %lu bytes\n", sizeof(float));
+    printf("datatype long occupies %lu bytes\n", sizeof(long));
+    printf("datatype double occupies %lu bytes\n", sizeof(double));
+    printf("datatype long long occupies %lu bytes\n", sizeof(long long));
+    printf("datatype long double occupies %lu bytes\n", sizeof(long double));
     
     return 0;
 }
