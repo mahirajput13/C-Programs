@@ -1,50 +1,24 @@
-// calculator program using statement
+// convert number of minutes into days and years
+// minutes should be entered by the user
 
 #include <stdio.h>
 int main(void)
 {
-    int a, b, add, sub, mul, div ;
-    char operator;
+    float mins, days, normalyear, leapyear;
     
     //taking input from the user
-    printf("\nenter value 1 : ");
-    scanf("%d", &a);
-    printf("\nenter value 2 : ");
-    scanf("%d", &b);
+    printf("\nenter the number of minutes to convert them into days, normal years and leap years : ");
+    scanf("%f", &mins);
     
-    printf("\nselect any symbol\n\n'+' for addition\n'-' for subtraction\n'*' for multiplication\n'/' for division\n");
-    scanf(" %c",&operator);
+    //applying condition
+    days = (mins/(60.0*24.0));
+    normalyear = (mins/(60.0*24.0*365.0));
+    leapyear = (mins/(60.0*24.0*366.0));
     
-    //applying switch cases
-    switch (operator)
-    {
-        case '+':
-            add = a+b;
-            printf("\naddition of entered number is %d\n", add);
-            break;
-        case '-':
-            sub = a-b;
-            printf("\nsubtraction of entered number is %d\n", sub);
-            break;
-        case '*':
-            mul = a*b;
-            printf("\nmultiplication of entered number is %d\n", mul);
-            break;
-        case '/':
-            if(b!=0)
-            {
-                div = a/b;
-                printf("\ndivision is %d\n", div);
-            }
-            else
-            {
-                printf("error : division by zero/n");
-            }
-            break;
-        default:
-            printf("\ninvalid operator\n");
-            break;
-    }
+    //displaying output
+    printf("\nthe number of days in entered minutes are %f ", days);
+    printf("\nthe number of normal years in entered minuutes are %f ", normalyear);
+    printf("\nthe number of leap years in entered minutes are %f \n", leapyear);
     
     return 0;
 }
