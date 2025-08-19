@@ -1,18 +1,17 @@
-//program to print number using while loop
-//example of counter controlled loop
+// print numbers from 1 to 5 using do while loop
+// example of counter controlled loop
 
 #include <stdio.h>
 int main(void)
 {
     
-    int num = 1;
+    int num=1;
     
-    //using while loop
-    while(num<=5)
-    {
+    //applying condition using do while loop
+    do {
         printf("%d\n", num);
         num++;
-    }
+    } while (num<=5);
     
     return 0;
 }
