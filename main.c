@@ -1,28 +1,34 @@
-//calculate the average of the elements of an array
+//checks whether the number is prime or not
+//number should be entered by the user
+
 #include <stdio.h>
 int main (void)
 {
-    int grades[10], sum = 0, i, avg;
+    int num, i, sum = 0;
     
-    //entering elements into the array (from the user)
-    printf("\nenter any 5 elements into the array\n");
-    for (i=0; i<5; i++)
+    //entering number bby the user
+    printf("\nenter any number to check whether it is prime or not  : ");
+    scanf("%d", &num);
+    
+    //applying condition to check whether it is prime or not
+    for (i=1; i<=num; i++)
     {
-        scanf("%d", &grades[i]);
+        if(num%i==0)
+        {
+            sum = sum + 1;
+        }
     }
     
-    //applying condition to get the sum of the elements of the array
-    for (i=0; i<5; i++)
+    //printing the output to the user after checking
+    if(sum==2)
     {
-        sum = sum + grades[i];
+        printf("\nthe entered number is prime\n");
+    }
+    else
+    {
+        printf("\nthe entered number is not prime\n");
     }
     
-    //finding average value
-    avg = sum/5;
-    
-    //printing output to the user
-    printf("the average value of the elements is %d \n", avg);
     
     return 0;
-    
 }
