@@ -1,18 +1,23 @@
-// unsigned int performing on bit level
-// bitwise operators
+// determine if the number entered by user is even or odd
 
 #include <stdio.h>
-int main (void)
+int main(void)
 {
+    int num;
     
-    unsigned int a = 60; //0011 1100
-    unsigned int b = 13; //0000 1101
-    int result = 0;
+    //taking input from the user
+    printf("\nenter any number to check if it is even or odd : ");
+    scanf("%d", &num);
     
-    // this '&', '|'and other bitwise operator works on bit level
-    result = a|b;
-    
-    printf("result is %d \n", result);
+    //applying condition and displaying output
+    if((num%2)==0)
+    {
+        printf("\nnumber entered by you is even\n");
+    }
+    else
+    {
+        printf("number entered by you is odd\n");
+    }
     
     return 0;
 }
