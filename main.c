@@ -1,25 +1,18 @@
-// calculate area and perimeter of rectangle
-// width and length is entered by the user
+//argument and vector
 
 #include <stdio.h>
-int main(void)
+int main(int argc, char *argv[])
 {
-    double l,b,p,a;
     
-    //taking input
-    printf("enter the length of the rectangle : ");
-    scanf("%lf", &l);
-    printf("\nenter  the width of the rectangle : ");
-    scanf("%lf", &b);
+    int numofarguments = argc;
+    char *argument1 = argv[0];
+    char *argument2 = argv[1];
     
-    //calculating values
-    p = 2.0*(l + b);
-    a = (l*b);
-    
-    //displaying result/output
-    printf("\nperimeter of the rectangle is %lf ", p);
-    printf("\narea of the rectangle is %lf \n", a);
+    //displaying output
+    printf("number of arguments is %d \n", numofarguments);
+    printf("\nargument 1 is the program name : %s \n", argument1);
+    printf("\nargument 2 is the command line argument : %s \n", argument2);
     
     return 0;
-    
 }
+    
