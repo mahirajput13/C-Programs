@@ -1,34 +1,56 @@
-//checking and printing prime number between 3 to 100
+// example of three dimensional array
+// elements of array should be entered by the user
+// print the elements of the array and the sum of all the elements of the array
+
 #include <stdio.h>
 int main(void)
 {
     
-    int i, num;
+    int i, j, k, sum=0, ar[1][2][3];
     
-    printf("\nprime numbers between 3 to 100 are : \n");
-    
-    //applying condition to check the number is prime or not
-    for (num=3; num<=100; num++)
+    //asking user to enter the elements into the array
+    printf("\nenter the elements into the array : \n");
+    for (i=0; i<2; i++)
     {
-        int sum=0;
-        
-        for (i=1; i<=num; i++)
+        for (j=0; j<3; j++)
         {
-            
-            if(num%i==0)
+            for (k=0; k<4; k++)
             {
-                sum = sum + 1;
+                scanf("%d ", &ar[i][j][k]);
             }
-            
         }
-       
-       if(sum==2)
-       {
-           printf("%d, ", num);
-       }
-        
     }
+    
+    //printing the elements of the array
+    printf("\nthe elements of the array are : \n");
+    for (i=0; i<2; i++)
+    {
+        for (j=0; j<3; j++)
+        {
+            for (k=0; k<4; k++)
+            {
+                printf("%d", ar[i][j][k]);
+                printf("\t");
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    
+    //calculating sum of the elements of the array
+    for (i=0; i<2; i++)
+    {
+        for (j=0; j<3; j++)
+        {
+            for (k=0; k<4; k++)
+            {
+                sum=sum+ar[i][j][k];
+            }
+        }
+    }
+    
+    //showing output of the sum to the user
+    printf("\nthe sum of the elements of the array is %d ", sum);
     
     return 0;
 }
-
