@@ -1,16 +1,17 @@
-// example of catenation of the strings
+// strchr function example
+// this function searches character in a string
 
 #include <stdio.h>
 #include <string.h>
 int main(void)
 {
     
-    char str1[] = "Hey!";
-    char str2[] = "What's up?";
+    char str[] = "the quick brown fox";
+    char ch = 'u';  //character to be searched
+    char *pointer = NULL;
     
-    //catenation of string occurs
-    strcat(str2, str1);
-    printf("final string is %s \n", str2);
-    
+    pointer = strchr(str, ch);
+    printf(" %c\n", *pointer);
     return 0;
+    
 }
