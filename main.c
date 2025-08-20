@@ -1,22 +1,28 @@
-// strtok function example
-
+// this is my fifth pointer program
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 int main(void)
 {
     
-    char str1[]  = " hello - how are you - my name is - jason";
-    const char str2[] = "-";
-    char *token;
+    int i = 10;
+    float f = 2.34;;
+    char ch = 'k';
     
-    // get the first token
-    token = strtok(str1, str2);
+    //creating void pointer
+    void *ptr;
     
-    // walk through other tokens
-    while(token != NULL)
-    {
-        printf("%s\n", token);
-        token = strtok(NULL, str2);
-    }
+    //casting void pointer to int
+    ptr = &i;
+    printf("value of i is %d\n", *(int*)ptr);
+    
+    //casting void pointer to float
+    ptr = &f;
+    printf("value of f is %f\n", *(float*)ptr);
+    
+    //casting void pointer to character
+    ptr = &ch;
+    printf("value of ch is %c\n", *(char*)ptr);
+    
     return 0;
+    
 }
