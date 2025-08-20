@@ -1,24 +1,16 @@
-//this is my fourth pointer program
+// example of catenation of the strings
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 int main(void)
 {
     
-    long n1 = 0l;
-    long n2 = 0l;
-    long *pnum = NULL;
+    char str1[] = "Hey!";
+    char str2[] = "What's up?";
     
-    pnum = &n1;
-    *pnum = 2l;
-    ++n2;
-    n2=+*pnum;
+    //catenation of string occurs
+    strcat(str2, str1);
+    printf("final string is %s \n", str2);
     
-    pnum = &n2;
-    ++*pnum;
-    
-    printf("n1 = %ld \nn2 = %ld\n*pnum = %ld\n*pnum + n2 = %ld\n", n1, n2, *pnum, *pnum + n2);
-     
     return 0;
-    
 }
