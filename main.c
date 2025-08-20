@@ -1,33 +1,27 @@
-// counting the number of letters, digits, punctuation characters in the string
+// this program will count the length of the string without using strlen()
 
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 int main(void)
 {
     
-    char str[100];
-    int nletters = 0, ndigits = 0, npunct = 0;
+    char str1[] = "hello!";
+    char str2[] = "my name is Mahi";
+    int count = 0;
     
-    //taking string as input
-    printf("\nenter an interesting string of less than 100 characters : \n");
-    scanf("%s", str);
+    //counts the length of the 1 string
+    while(str1[count]!='\0')
+        count++;
     
-    //applying loop
-    for (int i=0; str[i]!='\0'; i++)
-    {
-        if(isalpha(str[i]))
-            ++nletters;
-        else if(isdigit(str[i]))
-            ++ndigits;
-        else if(ispunct(str[i]))
-            ++npunct;
-    }
+    //prints the length of the first string
+    printf("the length of the string %s is %d \n", str1, count);
     
-    //printing the counted letters, digits, punctuation characters
-    printf("\nyour entered string contains %d letters\n", nletters);
-    printf("\nyour entered string contains %d digits\n", ndigits);
-    printf("\nyour entered string contains %d punctuation characters\n\n", npunct);
+    //initializing count to 0 and count the length of the 2 string
+    count = 0;
+    while(str2[count]!='\0')
+        count++;
+    
+    //prints the length of the second string
+    printf("the length of the string %s is %d \n", str2, count);
     
     return 0;
     
