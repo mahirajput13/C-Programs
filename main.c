@@ -1,23 +1,16 @@
-// this is my second pointer program
-
+//this is my third pointer program
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 int main(void)
 {
     
-    int number = 0;
-    int *pnum = NULL;
+    int num = 345670;
+    int *pointer = NULL;
+    pointer = &num;
     
-    number = 10;
-    
-    printf("the number's value is %d\n", number);
-    printf("the number's address is %p\n", &number);
-    
-    pnum = &number;
-    
-    printf("pnum's address is %p \n", pnum);
-    printf("pnum's value is %d \n", *pnum);
-    printf("pnum's size is %zd bytes \n", sizeof(pnum));
+    printf("the address of the pointer is %p \n", &pointer);
+    printf("the value of the pointer is %p \n", pointer);
+    printf("the value of what the pointer is pointing to is %d \n", *pointer);
     
     return 0;
 }
