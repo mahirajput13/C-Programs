@@ -1,19 +1,34 @@
-// multiplying two numbers using return keyword in function
+// counting the number of letters, digits, punctuation characters in the string
 
 #include <stdio.h>
-
-// making a function to multiply two numbers using return keyword
-int mul(int a, int b)
-{
-    int result = a*b;
-    return result;
-}
-
-//main function
+#include <string.h>
+#include <ctype.h>
 int main(void)
 {
-    int result = 0;
-    result = mul(10, 20);
-    printf("the multiplication of two numbers is %d \n", result);
+    
+    char str[100];
+    int nletters = 0, ndigits = 0, npunct = 0;
+    
+    //taking string as input
+    printf("\nenter an interesting string of less than 100 characters : \n");
+    scanf("%s", str);
+    
+    //applying loop
+    for (int i=0; str[i]!='\0'; i++)
+    {
+        if(isalpha(str[i]))
+            ++nletters;
+        else if(isdigit(str[i]))
+            ++ndigits;
+        else if(ispunct(str[i]))
+            ++npunct;
+    }
+    
+    //printing the counted letters, digits, punctuation characters
+    printf("\nyour entered string contains %d letters\n", nletters);
+    printf("\nyour entered string contains %d digits\n", ndigits);
+    printf("\nyour entered string contains %d punctuation characters\n\n", npunct);
+    
     return 0;
+    
 }
