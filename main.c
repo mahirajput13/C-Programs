@@ -1,18 +1,14 @@
-// comparing two strings using strcmp function
+// copying one string into another using strcpy function
 
 #include <stdio.h>
 #include <string.h>
 int main(void)
 {
-   
-    char str1[] = "excuse me";
-    char str2[] = "yes";
+    char str1[] = "Hey! What's up?";
+    char str2[50];
     
-    // displays 0 as output if strings are equal
-    // displays +ve value if string 1 is greater than string 2
-    // displays -ve value if string 2 is greater than string 1
-    
-    int result = strcmp(str2, str1);
-    printf("%d\n", result);
+    //copying string 1 to string 2 and then displaying it as output
+    strcpy(str2,str1);
+    printf("the string is %s \n", str2);
     return 0;
 }
