@@ -1,15 +1,22 @@
-// example of strlen()
-// calculate the length of thr string
+// strtok function example
 
 #include <stdio.h>
 #include <string.h>
 int main(void)
 {
     
-    char mystring[] = "Hey! My name is Mahi Rajput.";
+    char str1[]  = " hello - how are you - my name is - jason";
+    const char str2[] = "-";
+    char *token;
     
-    //calculate and print the lenth of the string
-    printf("the length of the string is : %lu \n", strlen(mystring));
+    // get the first token
+    token = strtok(str1, str2);
+    
+    // walk through other tokens
+    while(token != NULL)
+    {
+        printf("%s\n", token);
+        token = strtok(NULL, str2);
+    }
     return 0;
-    
 }
