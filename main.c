@@ -1,11 +1,12 @@
-// example of aan escape sequence
+// malloc example
 
 #include <stdio.h>
+#include <stdlib.h>
 int main(void)
-
 {
-    //backslash operator
-    printf("for \"you write\\\".\n");h
-    return 0;
     
+    int *x = malloc(sizeof(int));
+    *x = 54;
+    free(x);
+    return 0;
 }
