@@ -1,0 +1,14 @@
+// inputting a string via the keyboard using scanf function
+
+#include <stdio.h>
+int main(void)
+{
+    
+    char input[10];
+    printf("\nplease enter any string : \n");
+    scanf(" %s", input);
+    
+    printf("entered string is %s \n", input); //only print first word of string(limitation)
+    return 0;
+    
+}
