@@ -1,16 +1,24 @@
-//this is my third pointer program
+//this is my fourth pointer program
+
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 int main(void)
 {
     
-    int num = 345670;
-    int *pointer = NULL;
-    pointer = &num;
+    long n1 = 0l;
+    long n2 = 0l;
+    long *pnum = NULL;
     
-    printf("the address of the pointer is %p \n", &pointer);
-    printf("the value of the pointer is %p \n", pointer);
-    printf("the value of what the pointer is pointing to is %d \n", *pointer);
+    pnum = &n1;
+    *pnum = 2l;
+    ++n2;
+    n2=+*pnum;
     
+    pnum = &n2;
+    ++*pnum;
+    
+    printf("n1 = %ld \nn2 = %ld\n*pnum = %ld\n*pnum + n2 = %ld\n", n1, n2, *pnum, *pnum + n2);
+     
     return 0;
+    
 }
