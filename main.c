@@ -1,15 +1,16 @@
-// example of pass by reference
+// example of pass by value
+
 #include <stdio.h>
 #include <stdlib.h>
 
 //creating function to swap the value
-void swap(int *x, int *y)
+void swap (int x, int y)
 {
     int temp;
     
-    temp = *x;
-    *x = *y;
-    *y = temp;
+    temp = x;
+    x = y;
+    y = temp;
     
     return;
 }
@@ -28,7 +29,7 @@ int main(void)
     printf("\nafter swapping\n");
     
     //calling swap function
-    swap(&a,&b);
+    swap(a,b);
     printf("the value of a %d\n",a);
     printf("the value of b %d\n",b);
     
