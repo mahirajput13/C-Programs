@@ -1,38 +1,13 @@
-// example of pass by value
-
+// this is my first pointer program
 #include <stdio.h>
 #include <stdlib.h>
-
-//creating function to swap the value
-void swap (int x, int y)
-{
-    int temp;
-    
-    temp = x;
-    x = y;
-    y = temp;
-    
-    return;
-}
-
-//creating main function
 int main(void)
 {
+    int count = 10, x;
+    int *pointer = NULL;
+    pointer = &count;
+    x = *pointer;
     
-    int a = 100, b=200;
-    
-    //printing values before swapping
-    printf("before swapping\n");
-    printf("the value of a %d\n",a);
-    printf("the value of b %d\n",b);
-    
-    printf("\nafter swapping\n");
-    
-    //calling swap function
-    swap(a,b);
-    printf("the value of a %d\n",a);
-    printf("the value of b %d\n",b);
-    
+    printf("count = %i, x = %i\n", count, x);
     return 0;
-    
 }
